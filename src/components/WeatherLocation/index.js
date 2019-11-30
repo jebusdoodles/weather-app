@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
-import {
-    CLOUDY, 
-} from './../../constants/weathers';
-import { SUN } from '../../constants/weathers';
+import { SUN, WINDY } from '../../constants/weathers';
 
 const data = {
     temperature: 7, 
@@ -14,12 +11,42 @@ const data = {
     wind: '10 m/s',
 }
 
+const data2 = {
+    temperature: 15, 
+    weatherState: WINDY, 
+    humidity: 20,
+    wind: '30 m/s',
+}
 
-const WeatherLocation = () => (
-    <div className="weatherLocationCont">
-        <Location city={'Guadalajara'} />
-        <WeatherData data={data} />
-    </div>
-); 
+
+class WeatherLocation extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            city: "Buenos Aires",
+            data: data, 
+        };
+    }
+
+    handleUpdateClick = () => {
+        console.log("actualizado");
+
+        this.setState({
+            data: data2
+        });
+    }
+
+    render(){
+        const { city, data } = this.state;
+        return(
+            <div className="weatherLocationCont">
+                <Location city={city} />
+                <WeatherData data={data} />
+                <button onClick={this.handleUpdateClick}>Actualizar</button>
+            </div>
+        );
+    }
+} 
 
 export default WeatherLocation; 
