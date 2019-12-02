@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
-import { SUN, WINDY } from '../../constants/weathers';
+import { SUN } from '../../constants/weathers';
 
 const location= "Buenos Aires, ar";
 const api_key=""; 
@@ -17,13 +17,6 @@ const data = {
     wind: '10 m/s',
 }
 
-const data2 = {
-    temperature: 15, 
-    weatherState: WINDY, 
-    humidity: 20,
-    wind: '30 m/s',
-}
-
 
 class WeatherLocation extends Component {
 
@@ -35,12 +28,38 @@ class WeatherLocation extends Component {
         };
     }
 
-    handleUpdateClick = () => {
-        fetch(api_weather);
-        console.log("actualizado");
+    getWeatherState= weather_data =>{
+        return SUN; 
+    }
 
-        this.setState({
-            data: data2
+    getData = weather_data => {
+        const { humidity, temp } = weather_data.main; 
+        const { speed } = weather_data.wind; 
+        const weatherState = this.getWeatherState(weather_data);
+
+        const data = {
+            humidity,
+            temperature: temp, 
+            weatherState,
+            wind: `${speed} m/s`, 
+        }
+
+        return data; 
+    }
+
+    handleUpdateClick = () => {
+        fetch(api_weather).then( resolve => {
+            return resolve.json();
+        }).then(data => {
+
+            const newWeather = this.getData(data); 
+
+            console.log(newWeather); 
+            debugger; 
+            this.setState({
+                data: newWeather
+            });
+            
         });
     }
 
