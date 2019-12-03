@@ -26,6 +26,24 @@ class WeatherLocation extends Component {
         };
     }
 
+    componentDidMount() {
+        console.log('');
+    }
+    
+    componentDidUpdate(prevProps, prevState) {
+        console.log('');
+    }
+    
+    componentWillMount() {
+        console.log('');
+    }
+    
+    componentWillUpdate(nextProps, nextState) {
+        console.log('');
+    }
+    
+    
+
     handleUpdateClick = () => {
         fetch(api_weather).then( resolve => {
             return resolve.json();
