@@ -28,22 +28,13 @@ class WeatherLocation extends Component {
 
     componentDidMount() {
         console.log('');
-    }
-    
-    componentDidUpdate(prevProps, prevState) {
-        console.log('');
-    }
-    
-    componentWillMount() {
         this.handleUpdateClick();
     }
     
-    componentWillUpdate() {
-        console.log('UNSAFE componentwilllMoint ');
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Component Did update');
     }
     
-    
-
     handleUpdateClick = () => {
         fetch(api_weather).then( resolve => {
             return resolve.json();
