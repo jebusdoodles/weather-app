@@ -35,11 +35,11 @@ class WeatherLocation extends Component {
     }
     
     componentWillMount() {
-        console.log('');
+        this.handleUpdateClick();
     }
     
-    componentWillUpdate(nextProps, nextState) {
-        console.log('');
+    componentWillUpdate() {
+        console.log('UNSAFE componentwilllMoint ');
     }
     
     
@@ -48,11 +48,10 @@ class WeatherLocation extends Component {
         fetch(api_weather).then( resolve => {
             return resolve.json();
         }).then(data => {
-
+            console.log('resultado del handleUpdateClick')
             const newWeather = transformWeather(data); 
 
             console.log(newWeather); 
-            debugger; 
             this.setState({
                 data: newWeather
             });
