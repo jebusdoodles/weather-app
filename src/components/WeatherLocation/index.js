@@ -48,7 +48,7 @@ class WeatherLocation extends Component {
                 <Location city={city} />
                 {data ? 
                     <WeatherData data={data} />
-                    : <CircularProgress />
+                    : <CircularProgress size={50} />
                 }
             </div>
         );
