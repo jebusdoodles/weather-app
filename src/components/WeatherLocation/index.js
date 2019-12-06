@@ -45,7 +45,6 @@ class WeatherLocation extends Component {
         const { city, data } = this.state;
         return(
             <div className="weatherLocationCont">
-                <Location city={city} />
                 {data ? 
                     <WeatherData data={data} />
                     : <CircularProgress size={50} />
