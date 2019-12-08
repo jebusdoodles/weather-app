@@ -20,7 +20,6 @@ class WeatherLocation extends Component {
     }
 
     componentDidMount() {
-        console.log('');
         this.handleUpdateClick();
     }
     
