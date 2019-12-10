@@ -28,7 +28,6 @@ class WeatherLocation extends Component {
         fetch(api_weather).then( resolve => {
             return resolve.json();
         }).then(data => {
-            console.log('resultado del handleUpdateClick')
             const newWeather = transformWeather(data); 
 
             console.log(newWeather); 
