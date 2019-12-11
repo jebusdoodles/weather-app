@@ -4,6 +4,7 @@
     text-align: left;
     line-height: 35px;
     color: #888;
+    overflow: auto;
 }
 
 .locationCont h1{
