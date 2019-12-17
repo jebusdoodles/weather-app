@@ -43,9 +43,9 @@ class App extends Component {
               />
           </Col>
           <Col xs={12} md={6}>
-            <div className="datails">
-
-            </div>
+            <Paper elevation={4}>
+              <div className="datails"></div>
+            </Paper>
           </Col>
         </Row>
       </Grid>
