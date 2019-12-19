@@ -13,7 +13,7 @@ const cities = [
   'Washington, us',
   'Bogota, col',
   'Ciudad de México, mx',
-  'Madrid, es',
+  'Barcelona, es',
   'Lima, pe',
 ];
 
