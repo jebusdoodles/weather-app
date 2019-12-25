@@ -55,11 +55,8 @@ class App extends Component {
             <Paper elevation={4}>
               <div className="datails">
                {
-                !city ?
-                  <h1>
-                    No se ha seleccionado ciudad
-                  </h1> : 
-                    <ForecastExtended city={city} />  
+                 city &&
+                    <ForecastExtended city={city} /> 
                } 
               </div>
             </Paper>
