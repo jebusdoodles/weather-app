@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './styles.css';
-
+/*
 const days= [
     'Lunes', 
     'Martes',
@@ -17,20 +17,37 @@ const data = {
     weatherState: 'normal',
     wind: 'normal',
 };
-
+*/
 
 class ForecastExtended extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            forecastData: null
+        }
+    }
+
     renderForecastItemDays(){
-        return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
+        return "Render Items"; 
+        //return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
+    }
+
+    renderProgress = () => {
+        return "Cargando pronostico extendido";
     }
 
     render(){
         const { city } = this.props;
 
+        const { forecastData } = this.state; 
+
         return(
             <div>
                 <h2 className='forecast-title'>Pronostico extendido para {city}</h2>
-                {this.renderForecastItemDays()}
+                {forecastData?
+                    this.renderForecastItemDays():
+                    this.renderProgress()}
             </div>
         );
     }
