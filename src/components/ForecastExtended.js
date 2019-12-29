@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './styles.css';
+import WeatherData from './WeatherLocation/WeatherData';
 /*
 const days= [
     'Lunes', 
@@ -19,6 +20,9 @@ const data = {
 };
 */
 
+export const api_key="0c1e529959fc5a55f0a36ba5a01d1e81"; 
+export const url_base_weather = "http://api.openweathermap.org/data/2.5/forecast";
+
 class ForecastExtended extends Component {
 
     constructor(){
@@ -26,6 +30,18 @@ class ForecastExtended extends Component {
         this.state = {
             forecastData: null
         }
+    }
+
+    componentDidMount(){
+        const url_forecast = `${url_base_weather}?q=${this.props.city}&appid=${api_key}`;
+
+        fetch(url_forecast).then(
+            data => (data.json())
+        ).then(
+            weather_data => {
+                console.log(weather_data);
+            }
+        )
     }
 
     renderForecastItemDays(){
