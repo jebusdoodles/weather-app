@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './styles.css';
 import WeatherData from './WeatherLocation/WeatherData';
+
 /*
 const days= [
     'Lunes', 
@@ -45,8 +46,8 @@ class ForecastExtended extends Component {
     }
 
     renderForecastItemDays(){
-        return "Render Items"; 
-        //return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
+        //return "Render Items"; 
+        return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
     }
 
     renderProgress = () => {
