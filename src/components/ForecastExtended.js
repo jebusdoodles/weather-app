@@ -35,7 +35,19 @@ class ForecastExtended extends Component {
     }
 
     componentDidMount(){
-        const url_forecast = `${url_base_weather}?q=${this.props.city}&appid=${api_key}`;
+        // Es importante ejecutarlo la primera vez 
+        this.updateCity(this.props.city); 
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.city !== this.props.city){
+            this.setState({ forecastData:null });
+            this.updateCity(nextProps.city);
+        }
+    }
+
+    updateCity = city => {
+        const url_forecast = `${url_base_weather}?q=${city}&appid=${api_key}`;
 
         fetch(url_forecast).then(
             data => (data.json())
