@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './styles.css';
 import WeatherData from './WeatherLocation/WeatherData';
+import transformForecast from './../services/transformForecast';
 
 /*
 const days= [
@@ -41,22 +42,23 @@ class ForecastExtended extends Component {
         ).then(
             weather_data => {
                 console.log(weather_data);
+                const forecastData = transformForecast(weather_data);
+                this.setState({ forecastData });
             }
-        )
+        );
     }
 
     renderForecastItemDays(){
-        //return "Render Items"; 
-        return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
+        return <h1>Render items</h1>; 
+        //return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data} />));
     }
 
     renderProgress = () => {
-        return "Cargando pronostico extendido";
+        return <h1>Cargando pronostico extendido</h1>;
     }
 
     render(){
         const { city } = this.props;
-
         const { forecastData } = this.state; 
 
         return(
