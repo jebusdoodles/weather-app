@@ -73,7 +73,7 @@ class ForecastExtended extends Component {
     }
 
     renderProgress = () => {
-        return <h1>Cargando pronostico extendido</h1>;
+        return <h1>Cargando información extendido</h1>;
     }
 
     render(){
