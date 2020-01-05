@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './styles.css';
 import WeatherData from './WeatherLocation/WeatherData';
@@ -89,10 +88,6 @@ class ForecastExtended extends Component {
             </div>
         );
     }
-}
-
-ForecastExtended.propTypes = {
-    city: PropTypes.string.isRequired,
 }
 
 export default ForecastExtended;
