@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({ city });
     console.log(`handleSelectedLocation ${city}`);
 
-    this.props.setCity1(city); 
+    this.props.setCity(city); 
   }
 
   render(){
@@ -74,7 +74,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => (
   {
-    setCity1: value => dispatch(setCity(value))
+    setCity: value => dispatch(setCity(value))
   }
 );
 
