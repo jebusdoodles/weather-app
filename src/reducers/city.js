@@ -7,6 +7,7 @@ export const city = (state = {}, action) => {
     /* Generemos una copia del estado con una propiedad alterada: generar estado inmutable
                 que va inmutando con la realización de acciones */
             return { ...state, city: action.payload } 
+            /*  Se hace un desgloce de la propiedad original */
         default:
             return state;  
     }
