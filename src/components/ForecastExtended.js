@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ForecastItem from './ForecastItem';
 import './styles.css';
-import WeatherData from './WeatherLocation/WeatherData';
 import transformForecast from './../services/transformForecast';
 
 /*
