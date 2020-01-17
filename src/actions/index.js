@@ -7,7 +7,7 @@ export const url_base_weather = "http://api.openweathermap.org/data/2.5/forecast
 
 export const fecthForecast = payload => {
     return dispatch => {
-        const url_forecast = `${url_base_weather}?q=${city}&appid=${api_key}`;
+        const url_forecast = `${url_base_weather}?q=${}&appid=${api_key}`;
 
         // activar en el estaod un indicador de busqueda
 
