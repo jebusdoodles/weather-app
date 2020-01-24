@@ -7,5 +7,8 @@ export const cities = (state = {}, action) => {
             //en caso de recibir informacion la almacena en un reducer 
             //emacscript 6 
             return { ...state, [city]: {forecastData}}; 
+        default:
+            // en otro caso retorna el estado
+            return state; 
     }
 }
