@@ -7,7 +7,7 @@ class ForecastExtendedContainer extends Component{
         const { city, forecastData } = this.props; 
         return(
             city &&  
-            <ForecastExtended city={city} forecastData={forecastData} />
+            <ForecastExtended city={city}  />
         ); 
     }
 }
