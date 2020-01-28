@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { getForecastDataFromCities } from './../reducers/cities';
+import { getForecastDataFromCities, getCity } from './../reducers';
 import ForecastExtended from './../components/ForecastExtended'
 
 class ForecastExtendedContainer extends Component{
@@ -14,6 +14,6 @@ class ForecastExtendedContainer extends Component{
 }
  //destructuring del state ->
  //En el siguiente punto le hacemos conocer que dentro de cities hay un diccionario ForecastData 
-const mapStateToProps = state => ({ city: state.city, forecastData: getForecastDataFromCities(state.cities, state.city) }); 
+const mapStateToProps = state => ({ city: getCity(state), forecastData: getForecastDataFromCities(state) }); 
 
 export default connect(mapStateToProps, null)(ForecastExtendedContainer);
