@@ -12,3 +12,6 @@ export const cities = (state = {}, action) => {
             return state; 
     }
 }
+
+// Diccionario y sobre este diccionario esta ForecastData
+export const getForecastDataFromCities = (state, city) => state[city] && state[city].forecastData; 
