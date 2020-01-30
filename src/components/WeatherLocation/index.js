@@ -1,22 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import getUrlWeatherByCity from './../../services/getUrlWeatherByCity'
 import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
 
-import transformWeather from './../../services/transformWeather';
-
-class WeatherLocation extends Component {
-    constructor(props){
-        super(props);
-        const { city } = props;
-
-        this.state = {
-            city,
-            data: null, 
-        };
-    }
+/* 
 
     componentDidMount() {
         this.handleUpdateClick();
@@ -35,20 +24,17 @@ class WeatherLocation extends Component {
         });
     }
 
-    render(){
-        const { onWeatherLocationClick } = this.props;
-        const { city, data } = this.state;
-        return(
-            <div className="weatherLocationCont" onClick={onWeatherLocationClick} >
+
+*/
+const WeatherLocation = ({ onWeatherLocationClick, city, data }) => (
+    <div className="weatherLocationCont" onClick={onWeatherLocationClick} >
                 <Location city={city} />
-                {data ? 
-                    <WeatherData data={data} />
-                    : <CircularProgress size={50} />
-                }
-            </div>
-        );
-    }
-} 
+        {data ? 
+            <WeatherData data={data} />
+            : <CircularProgress size={50} />
+        }
+    </div>
+);
 
 
 export default WeatherLocation; 
