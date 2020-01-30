@@ -52,7 +52,7 @@ export const setWeather = payload => {
                 return resolve.json();
             }).then(weather_data => {
                 const data = transformWeather(weather_data); 
-                dispatch(setWeatherCity({city, data}))
+                dispatch(setWeatherCity({city, weather}))
             });
         })
 
