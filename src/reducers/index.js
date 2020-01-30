@@ -10,4 +10,4 @@ export default combineReducers({
 //selector
 export const getCity = state => state.city; 
 // refactorización para abstraer forecastData
-export const getForecastDataFromCities = state => (_getForecastDataFromCities(state.cities, getCity(state))); 
+export const getForecastDataFromCities = state => (_getForecastDataFromCities(state.cities, getCity(state.city))); 
