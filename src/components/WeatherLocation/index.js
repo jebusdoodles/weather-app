@@ -20,7 +20,6 @@ import './styles.css';
             this.setState({
                 data: newWeather
             });
-            
         });
     }
 
