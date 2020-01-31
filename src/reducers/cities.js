@@ -25,3 +25,5 @@ export const cities = (state = {}, action) => {
 
 // Diccionario y sobre este diccionario esta ForecastData
 export const getForecastDataFromCities = createSelector((state, city) =>  state[city] && state[city].forecastData, forecastData => forecastData);
+
+export const getWeatherCities = createSelector(state => [], cities => cities); 
