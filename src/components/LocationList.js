@@ -14,7 +14,8 @@ const LocationList = ({ cities, onSelectedLocation }) => {
                 <WeatherLocation 
                     key={city.key} 
                     city={city.name} 
-                    onWeatherLocationClick={ () => handleWeatherLocationClick(city.name)} data={city.data} />
+                    onWeatherLocationClick={ () => handleWeatherLocationClick(city.name)} 
+                    data={city.data} />
             ) 
         )
     );
