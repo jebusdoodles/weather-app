@@ -10,14 +10,6 @@ export const cities = (state = {}, action) => {
             //emacscript 6 
             return { ...state, [city]: {forecastData}};
         }
-        case GET_WEATHER_CITY: {
-            const city = action.payload; 
-            return { ...state, [city]: { weather: null}};
-        }
-        case SET_WEATHER_CITY: {
-            const {city, weather} = action.payload; 
-            return { ...state, [city]: { weather }}; 
-        }
         default:
             // en otro caso retorna el estado
             return state; 
