@@ -1,6 +1,5 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress'
-import getUrlWeatherByCity from './../../services/getUrlWeatherByCity'
 import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
@@ -26,12 +25,10 @@ import './styles.css';
 
 */
 const WeatherLocation = ({ onWeatherLocationClick, city, data }) => (
-    <div className="weatherLocationCont" onClick={onWeatherLocationClick} >
+    <div className='weatherLocationCont' onClick={onWeatherLocationClick} >
                 <Location city={city} />
-        {data ? 
-            <WeatherData data={data} />
-            : <CircularProgress size={50} />
-        }
+        {data ? <WeatherData data={data} /> : 
+        <CircularProgress size={50} thickness={7} />}
     </div>
 );
 

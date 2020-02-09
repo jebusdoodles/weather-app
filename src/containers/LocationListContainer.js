@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setSelectedCity, setWeather, GET_WEATHER_CITY } from './../actions';
+import { setSelectedCity, setWeather } from './../actions';
 import { getWeatherCities } from './../reducers';
 import LocationList from './../components/LocationList'; 
 
@@ -26,7 +26,7 @@ class LocationListContainer extends Component{
 
 const mapDispatchToProps = dispatch => ({
       setCity: value => dispatch(setSelectedCity(value)),
-      setWeather: cities => dispatch(setWeather(cities))
+      setWeather: cities => dispatch(setWeather(cities)),
     });
 
 const mapStateToProps = state => ({citiesWeather: getWeatherCities(state)});
