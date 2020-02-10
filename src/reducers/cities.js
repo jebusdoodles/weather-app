@@ -8,7 +8,7 @@ export const cities = (state = {}, action) => {
             const { city, forecastData } = action.payload;
             //en caso de recibir informacion la almacena en un reducer 
             //emacscript 6 
-            return { ...state, [city]: { ...state[city], forecastData}};
+            return { ...state, [city]: { ...state[city], forecastData, forecastDataDate: new Date() }};
         }
         case GET_WEATHER_CITY: {
             const city = action.payload; 

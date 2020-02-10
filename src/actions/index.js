@@ -18,13 +18,23 @@ export const api_key="0c1e529959fc5a55f0a36ba5a01d1e81";
 export const url_base_weather = "http://api.openweathermap.org/data/2.5/forecast";
 export const url_weather = "http://api.openweathermap.org/data/2.5/weather";
 
+// Accion que trae el pronostico extendido
 export const setSelectedCity = payload => {
-    return dispatch => {
+
+    return (dispatch, getState) => {
         const url_forecast = `${url_base_weather}?q=${payload}&appid=${api_key}`;
 
         // activar en el estaod un indicador de busqueda
         dispatch(setCity(payload));
 
+        const state = getState(); 
+        const date = state.cities[payload] && state.cities[payload].forecastDataDate;
+        //hora actual
+        const now = new Date(); 
+        // revisa si existe un regristro previo en el tiempo anterior inmediato
+        if(date && (now - date) < 1 * 60 * 1000){
+            return; 
+        }
         return fetch(url_forecast).then(
             data => (data.json())
         ).then(
