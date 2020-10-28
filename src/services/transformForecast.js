@@ -1,6 +1,6 @@
 import moment from 'moment';
-import 'moment/locale/es'; 
-import transformWeather from './transformWeather'; 
+import 'moment/locale/es';
+import transformWeather from './transformWeather';
 
 const transformForecast = data => (
     data.list.filter(item => (
