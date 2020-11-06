@@ -16,7 +16,7 @@
     "react-scripts": "^3.4.3",
     "react-weathericons": "^1.0.4",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.3.0",
     "reselect": "^2.5.4",
     "reselect-tools": "0.0.4"
   },

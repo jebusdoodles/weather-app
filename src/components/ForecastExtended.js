@@ -56,6 +56,7 @@ class ForecastExtended extends Component {
             }
         );
     }
+    
     renderForecastItemDays(forecastData) {
         return forecastData.map( forecast => (
             <ForecastItem 
